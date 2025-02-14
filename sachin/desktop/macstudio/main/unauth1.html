@@ -26,7 +26,7 @@
 		</style>
 		
 		<script type='text/javascript'>
-			document.getElementById('editThisPageLink').href = "https://github.com/ESW1234/esw1234.github.io/edit/master" + window.location.pathname;
+			document.getElementById('editThisPageLink').href = "https://github.com/sachinhreddy-sfdc/esw1234.github.io/edit/master" + window.location.pathname;
 
 			window.addEventListener("onEmbeddedMessagingReady", () => {
 				// Embedded Messaging app ready
@@ -39,7 +39,7 @@
 			try {
 				embeddedservice_bootstrap.settings.language = 'en'; // For example, enter 'en' or 'en-US'
 				embeddedservice_bootstrap.settings.devMode = true;
-				//embeddedservice_bootstrap.settings.enableUserInputForConversationWithBot = false;
+				embeddedservice_bootstrap.settings.enableUserInputForConversationWithBot = false;
 
 				// embeddedservice_bootstrap.init(
 				// 	'00DSG000001NruH',
@@ -58,12 +58,20 @@
 				// 		scrt2URL: 'https://esw-sdb3-blitz.test1.my.pc-rnd.salesforce-scrt.com'
 				// 	}
 				// );
+				// embeddedservice_bootstrap.init(
+				// 	'00DSB00000Ga2IE', // SDB3_ASA org
+				// 	'ASAWeb1', // SDB3_ASA deployment
+				// 	'https://dxx0000006gqxeae.my.localhost.sfdcdev.site.com:7443/ESWWeb31734396432075', // local org site url
+				// 	{
+				// 		scrt2URL: 'https://dsb00000ga2ie2az.test1.my.pc-rnd.salesforce-scrt.com' // SDB3_ASA deployment's SCRT2 URL
+				// 	}
+				// );
 				embeddedservice_bootstrap.init(
-					'00DSB00000Ga2IE', // SDB3_ASA org
-					'ASAWeb1', // SDB3_ASA deployment
+					'00DSG00000HDf3Z', // SDB6_ASA org
+					'ASAWeb1', // SDB6_ASA deployment
 					'https://dxx0000006gqxeae.my.localhost.sfdcdev.site.com:7443/ESWWeb31734396432075', // local org site url
 					{
-						scrt2URL: 'https://dsb00000ga2ie2az.test1.my.pc-rnd.salesforce-scrt.com' // SDB3_ASA deployment's SCRT2 URL
+						scrt2URL: 'https://dsg00000hdf3z2at.test1.my.pc-rnd.salesforce-scrt.com' // SDB6_ASA deployment's SCRT2 URL
 					}
 				);
 			} catch (err) {
