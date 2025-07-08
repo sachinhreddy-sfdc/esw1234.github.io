@@ -16,6 +16,7 @@
 		window.addEventListener("onEmbeddedMessagingReady", () => {
 			// Embedded Messaging app ready
 			console.log("onEmbeddedMessagingReady event received");
+			embeddedservice_bootstrap.settings.displayMode = "inline";
 		});
 
 		window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
@@ -33,6 +34,7 @@
 				embeddedservice_bootstrap.settings.language = 'en'; // For example, enter 'en' or 'en-US'
 				embeddedservice_bootstrap.settings.devMode = true;
         			embeddedservice_bootstrap.settings.enableUserInputForConversationWithBot = false;
+				embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true;
 
 				embeddedservice_bootstrap.init(
 				  '00DSG00000HDf3Z',
