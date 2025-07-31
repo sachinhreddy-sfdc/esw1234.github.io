@@ -48,6 +48,7 @@
 		     }).catch(function(err) {
 				   console.error("Failed to get an identity token");
 		     }
+		}
 
 		function retryFetchRequest(requestUrl) {
 			return fetch(requestUrl).then(function(response) {
