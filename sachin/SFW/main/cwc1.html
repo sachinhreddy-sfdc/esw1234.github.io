@@ -1,0 +1,53 @@
+
+
+
+
+<html>
+<head>
+	<title>SDB6-CWC-Unauth-1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+<body>
+	<h1> SDB6-CWC-Unauth-1 </h1>
+  <h2 style="color:blue;">Admin: epic.e35efd8bb6cf@orgfarm.out</h2>
+	<p><a id="editThisPageLink" target="_blank" style="color:blue">Edit this page</a></p>
+	<script>document.getElementById('editThisPageLink').href = "https://github.com/ESW1234/esw1234.github.io/edit/master" + window.location.pathname;</script>
+
+	<script "text/javascript">
+		window.addEventListener("onEmbeddedMessagingReady", () => {
+			// Embedded Messaging app ready
+			console.log("onEmbeddedMessagingReady event received");
+		});
+
+		window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
+			console.log("Received 'onEmbeddedMessagingInitSuccess' event");
+		});
+
+		window.addEventListener("onEmbeddedMessagingInitError", () => {
+			console.log("Received 'onEmbeddedMessagingInitError' event");
+		});
+	</script>
+
+	<script type='text/javascript'>
+		function initCWC() {
+			try {
+				embeddedservice_bootstrap.settings.language = 'en'; // For example, enter 'en' or 'en-US'
+				embeddedservice_bootstrap.settings.devMode = true;
+        //embeddedservice_bootstrap.settings.enableUserInputForConversationWithBot = false;
+
+				embeddedservice_bootstrap.init(
+				  '00DSG00000HDf3Z',
+				  'ASAWeb1',
+				  'https://orgfarm-2beffa8680.my.site-com.u3wz0ipqs6111y31f1u7rk1g30si.wb.crm.dev:6101/ESWCWC11754426219214',
+				  {
+					  scrt2URL: 'https://dsg00000hdf3z2at.test1.my.pc-rnd.salesforce-scrt.com'
+				  }
+			);
+			} catch (err) {
+				console.error('Error loading Embedded Messaging: ', err);
+			}
+		};
+	</script>
+	<script type='text/javascript' src='https://orgfarm-2beffa8680.my.site-com.u3wz0ipqs6111y31f1u7rk1g30si.wb.crm.dev:6101/ESWCWC11754426219214/assets/js/init.js' onload='initCWC()'></script>
+</body>
+</html>
