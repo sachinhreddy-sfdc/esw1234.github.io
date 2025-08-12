@@ -34,7 +34,7 @@
 				// Embedded Messaging app ready
 				console.log("onEmbeddedMessagingReady event received");
 				fetchAndSetToken();
-		  });
+		  	});
 		</script>
 		<script type='text/javascript'>
 		function setIdentityToken(token) {
@@ -90,6 +90,9 @@
 		window.addEventListener("onEmbeddedMessagingIdentityTokenExpired", () => {
 		     console.log("Received the onEmbeddedMessagingTokenExpired event…");
 		     fetchAndSetToken();
+		});
+		window.addEventListener("onEmbeddedMessagingSessionStatusUpdate", (evt) => {
+		     console.log("Received the onEmbeddedMessagingSessionStatusUpdate event", evt.data);
 		});
 	</script>
 		
