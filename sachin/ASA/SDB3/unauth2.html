@@ -26,6 +26,14 @@
 		window.addEventListener("onEmbeddedMessagingInitError", () => {
 			console.log("Received 'onEmbeddedMessagingInitError' event");
 		});
+
+		window.addEventListener("onEmbeddedMessagingWindowMinimized", () => {
+			console.log("Received 'onEmbeddedMessagingWindowMinimized' event");
+			const miawIframe = document.getElementById('embeddedMessagingFrame');
+			if (miawIframe) {
+				miawIframe.style.display = 'none';
+			}
+		});
 	</script>
 
 	<script type='text/javascript'>
