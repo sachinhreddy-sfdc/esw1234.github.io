@@ -25,6 +25,10 @@
 				// Embedded Messaging app ready
 				console.log("onEmbeddedMessagingReady event received");
 		  	});
+			window.addEventListener("onEmbeddedMessagingConversationClosed", () => {
+				// Embedded Messaging Conversation closed
+				console.log("onEmbeddedMessagingConversationClosed event received");
+		  	});
 		</script>
 		
 	<script type='text/javascript'>
@@ -39,7 +43,7 @@
 				embeddedservice_bootstrap.init(
 					'00DSB00000TcgK5',
 					'Web1',
-					'https://my256p.force-com.aufws4eny8hy0ba6e9kygzpzl1qzah.wc.crm.dev:6101/ESWWeb11750957799219',
+					'https://orgfarm-7e3abd0349.my.site-com.ubmglcvjzwfw0f6wi57vog7dl01s.wc.crm.dev:6101/ESWMIAW11758039087744',
 					{
 						scrt2URL: 'https://orgfarm-47f8da4be3.test1.my.pc-rnd.salesforce-scrt.com'
 					}
@@ -49,6 +53,6 @@
 			}
 		};
 	</script>
-	<script type='text/javascript' src='https://my256p.force-com.aufws4eny8hy0ba6e9kygzpzl1qzah.wc.crm.dev:6101/ESWWeb11750957799219/assets/js/bootstrap.js' onload='initEmbeddedMessaging()'></script>
+	<script type='text/javascript' src='https://orgfarm-7e3abd0349.my.site-com.ubmglcvjzwfw0f6wi57vog7dl01s.wc.crm.dev:6101/ESWMIAW11758039087744/assets/js/bootstrap.js' onload='initEmbeddedMessaging()'></script>
 	</body>
 </html>
