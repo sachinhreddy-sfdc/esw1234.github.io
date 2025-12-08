@@ -28,6 +28,19 @@
 			console.log("Received 'onEmbeddedMessagingInitError' event");
 		});
 
+		window.addEventListener("onEmbeddedMessagingButtonCreated", () => {
+			console.log("Received 'onEmbeddedMessagingButtonCreated' event");
+			embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Location": "California"});
+			embeddedservice_bootstrap.utilAPI
+  			.launchChat()
+  			.then(function (success) {
+    			console.log("Successfully launched MIAW.");
+  			})
+  			.catch(function (err) {
+    			console.error("Something went wrong in launching MIAW: ", err);
+  			});
+		});
+
 		// window.addEventListener("onEmbeddedMessagingWindowMinimized", () => {
 		// 	console.log("Received 'onEmbeddedMessagingWindowMinimized' event");
 		// 	const miawIframe = document.getElementById('embeddedMessagingFrame');
