@@ -28,18 +28,18 @@
 			console.log("Received 'onEmbeddedMessagingInitError' event");
 		});
 
-		window.addEventListener("onEmbeddedMessagingButtonCreated", () => {
-			console.log("Received 'onEmbeddedMessagingButtonCreated' event");
-			embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Location": "California"});
-			embeddedservice_bootstrap.utilAPI
-  			.launchChat()
-  			.then(function (success) {
-    			console.log("Successfully launched MIAW.");
-  			})
-  			.catch(function (err) {
-    			console.error("Something went wrong in launching MIAW: ", err);
-  			});
-		});
+		// window.addEventListener("onEmbeddedMessagingButtonCreated", () => {
+		// 	console.log("Received 'onEmbeddedMessagingButtonCreated' event");
+		// 	embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Location": "California"});
+		// 	embeddedservice_bootstrap.utilAPI
+  // 			.launchChat()
+  // 			.then(function (success) {
+  //   			console.log("Successfully launched MIAW.");
+  // 			})
+  // 			.catch(function (err) {
+  //   			console.error("Something went wrong in launching MIAW: ", err);
+  // 			});
+		// });
 
 		// window.addEventListener("onEmbeddedMessagingWindowMinimized", () => {
 		// 	console.log("Received 'onEmbeddedMessagingWindowMinimized' event");
@@ -64,9 +64,10 @@
 			try {
 				embeddedservice_bootstrap.settings.language = 'en'; // For example, enter 'en' or 'en-US'
 				embeddedservice_bootstrap.settings.devMode = true;
-        		embeddedservice_bootstrap.settings.enableUserInputForConversationWithBot = false;
+        		//embeddedservice_bootstrap.settings.enableUserInputForConversationWithBot = false;
 				//embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true;
 				embeddedservice_bootstrap.settings.sseRetryEnhancement = true;
+				embeddedservice_bootstrap.settings.shouldOpenLinksInSameTab = true;
 
 				embeddedservice_bootstrap.init(
 				  '00DSB00000TcgK5',
