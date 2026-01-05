@@ -31,22 +31,22 @@
 	<script type='text/javascript'>
 		function initCWC() {
 			try {
-				agentforce_messaging.settings.language = 'en'; // For example, enter 'en' or 'en-US'
-				agentforce_messaging.settings.devMode = true;
+				embeddedservice_bootstrap.settings.language = 'en'; // For example, enter 'en' or 'en-US'
+				embeddedservice_bootstrap.settings.devMode = true;
 
-				agentforce_messaging.init(
-				  '00DSG00000HDf3Z',
-				  'CWC3',
-				  'https://orgfarm-2beffa8680.my.site-com.u3wz0ipqs6111y31f1u7rk1g30si.wb.crm.dev:6101/ESWCWCTest11758297660495',
-				  {
-					  scrt2URL: 'https://dsg00000hdf3z2at.test1.my.pc-rnd.salesforce-scrt.com'
-				  }
-			);
+				embeddedservice_bootstrap.init(
+					'00DSG00000HDf3Z',
+					'CWC5',
+					'https://dsg00000hdf3z2at.demo.test1.my.pc-rnd.site.com/ESWCWC51767645052813',
+					{
+						scrt2URL: 'https://dsg00000hdf3z2at.demo.test1.my.pc-rnd.salesforce-scrt.com'
+					}
+				);
 			} catch (err) {
 				console.error('Error loading Embedded Messaging: ', err);
 			}
 		};
 	</script>
-	<script type='text/javascript' src='https://orgfarm-2beffa8680.my.site-com.u3wz0ipqs6111y31f1u7rk1g30si.wb.crm.dev:6101/ESWCWCTest11758297660495/assets/js/init.js' onload='initCWC()'></script>
+	<script type='text/javascript' src='https://dsg00000hdf3z2at.demo.test1.my.pc-rnd.site.com/ESWCWC51767645052813/assets/js/init.js' onload='initCWC()'></script>
 </body>
 </html>
