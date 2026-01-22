@@ -9,8 +9,14 @@
 	<p><a id="editThisPageLink" target="_blank" style="color:blue">Edit this page</a></p>
 	<script>document.getElementById('editThisPageLink').href = "https://github.com/sachinhreddy-sfdc/esw1234.github.io/edit/master/sachin/ASA/SDB6/unauth1.html"</script>
 
+	<button class="chat-btn" onclick="launchChat()">
+  		💬 Start Chat
+	</button>
 	<style>
 		.chat-btn {
+		  position: fixed;
+		  bottom: 24px;
+		  right: 24px;
 		  background: linear-gradient(135deg, #4f46e5, #6366f1);
 		  color: #ffffff;
 		  border: none;
@@ -24,6 +30,7 @@
 		  display: inline-flex;
 		  align-items: center;
 		  gap: 8px;
+		  z-index: 1000;
 		}
 
 		.chat-btn:hover {
@@ -57,10 +64,6 @@
 		window.addEventListener("onEmbeddedMessagingInitError", () => {
 			console.log("Received 'onEmbeddedMessagingInitError' event");
 		});
-
-		<button class="chat-btn" onclick="launchChat()">
-  			💬 Start Chat
-		</button>
 
 		window.addEventListener("onEmbeddedMessagingWindowMinimized", () => {
 			console.log("Received 'onEmbeddedMessagingWindowMinimized' event");
