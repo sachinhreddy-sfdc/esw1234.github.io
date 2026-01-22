@@ -9,7 +9,7 @@
 	<p><a id="editThisPageLink" target="_blank" style="color:blue">Edit this page</a></p>
 	<script>document.getElementById('editThisPageLink').href = "https://github.com/sachinhreddy-sfdc/esw1234.github.io/edit/master/sachin/ASA/SDB6/unauth1.html"</script>
 
-	<button class="chat-btn" onclick="launchChat()">
+	<button class="chat-btn" id="chat-btn" onclick="launchChat()">
   		💬 Start Chat
 	</button>
 	<style>
@@ -71,16 +71,27 @@
 			if (miawIframe) {
 				miawIframe.style.display = 'none';
 			}
+			const customChatButton = document.getElementById('chat-btn');
+			if (customChatButton) {
+				customChatButton.style.display = 'block';
+			}
 		});
 	</script>
 
 	<script type='text/javascript'>
-		function launchChat() {
-    		const miawIframe = document.getElementById('embeddedMessagingFrame');
-    		if (miawIframe) {
-    			miawIframe.style.display = 'block';
-        	}  
-        	embeddedservice_bootstrap.utilAPI.launchChat();
+		function launchChat() { 
+        	embeddedservice_bootstrap.utilAPI.launchChat()
+			.then(() => {
+				console.log("Successfully launched the enhanced chat client");
+				const miawIframe = document.getElementById('embeddedMessagingFrame');
+    			if (miawIframe) {
+    				miawIframe.style.display = 'block';
+        		} 
+				const customChatButton = document.getElementById('chat-btn');
+				if (customChatButton) {
+					customChatButton.style.display = 'none';
+				}
+			});
     	}
 		function initEmbeddedMessaging() {
 			try {
