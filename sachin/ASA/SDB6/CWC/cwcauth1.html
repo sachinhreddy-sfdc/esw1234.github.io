@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>SDB6-CWC-Auth-1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+<body>
+	<h1> SDB6-CWC-Auth-1 </h1>
+  <h2 style="color:blue;">Admin: epic.e35efd8bb6cf@orgfarm.out</h2>
+	<p><a id="editThisPageLink" target="_blank" style="color:blue">Edit this page</a></p>
+	<script>document.getElementById('editThisPageLink').href = "https://github.com/sachinhreddy-sfdc/esw1234.github.io/edit/master/sachin/ASA/SDB6/CWC/cwcauth1.html"</script>
+
+	<script "text/javascript">
+		window.addEventListener("onEmbeddedMessagingReady", () => {
+			// Embedded Messaging app ready
+			console.log("onEmbeddedMessagingReady event received");
+		});
+
+		window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
+			console.log("Received 'onEmbeddedMessagingInitSuccess' event");
+		});
+
+		window.addEventListener("onEmbeddedMessagingInitError", () => {
+			console.log("Received 'onEmbeddedMessagingInitError' event");
+		});
+	</script>
+
+	<script type='text/javascript'>
+		function initCWC() {
+			try {
+				agentforce_messaging.settings.language = 'en'; // For example, enter 'en' or 'en-US'
+				agentforce_messaging.settings.devMode = true;
+				//agentforce_messaging.settings.displayMode = 'inline';
+        
+				agentforce_messaging.init(
+				  '00DSG00000HDf3Z',
+				  'CWCAuth1',
+				  'https://dsg00000hdf3z2at.demo.test1.my.pc-rnd.site.com/ESWCWCAuth11771016159952',
+				  {
+					  scrt2URL: 'https://dsg00000hdf3z2at.demo.test1.my.pc-rnd.salesforce-scrt.com'
+				  }
+			  );
+			} catch (err) {
+				console.error('Error loading Embedded Messaging: ', err);
+			}
+		};
+	</script>
+	<script type='text/javascript' src='https://dsg00000hdf3z2at.demo.test1.my.pc-rnd.site.com/ESWCWCAuth11771016159952/assets/js/init.js' onload='initCWC()'></script>
+</body>
+</html>
