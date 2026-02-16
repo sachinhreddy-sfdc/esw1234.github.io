@@ -13,6 +13,7 @@
 		window.addEventListener("onEmbeddedMessagingReady", () => {
 			// Embedded Messaging app ready
 			console.log("onEmbeddedMessagingReady event received");
+			fetchAndSetToken();
 		});
 
 		window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
