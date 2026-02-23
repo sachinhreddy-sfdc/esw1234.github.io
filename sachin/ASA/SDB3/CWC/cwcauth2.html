@@ -23,6 +23,10 @@
 		window.addEventListener("onEmbeddedMessagingInitError", () => {
 			console.log("Received 'onEmbeddedMessagingInitError' event");
 		});
+
+		window.addEventListener("onEmbeddedMessagingButtonCreated", () => {
+			console.log("Received 'onEmbeddedMessagingButtonCreated' event");
+		});
 	</script>
 
 	<script type='text/javascript'>
@@ -77,8 +81,8 @@
 		};
 
 		window.addEventListener("onEmbeddedMessagingIdentityTokenExpired", () => {
-		     console.log("Received the onEmbeddedMessagingTokenExpired event…");
-		     //fetchAndSetToken();
+		     console.log("Received the onEmbeddedMessagingIdentityTokenExpired event.");
+		     fetchAndSetToken();
 		});
 
 		function initCWC() {
