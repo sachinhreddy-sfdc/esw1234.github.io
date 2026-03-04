@@ -28,6 +28,10 @@
 			console.log("Received 'onEmbeddedMessagingInitError' event");
 		});
 
+		window.addEventListener("onEmbeddedMessagingBusinessHoursEnded", () => {
+			console.log("Received 'onEmbeddedMessagingBusinessHoursEnded' event");
+		});
+
 		// window.addEventListener("onEmbeddedMessagingButtonCreated", () => {
 		// 	console.log("Received 'onEmbeddedMessagingButtonCreated' event");
 		// 	embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Location": "California"});
