@@ -24,6 +24,10 @@
 		window.addEventListener("onEmbeddedMessagingInitError", () => {
 			console.log("Received 'onEmbeddedMessagingInitError' event");
 		});
+
+		window.addEventListener("onEmbeddedMessagingBusinessHoursEnded", () => {
+			console.log("Received 'onEmbeddedMessagingBusinessHoursEnded' event");
+		});
 	</script>
 	<script type='text/javascript'>
 		function setIdentityToken(token) {
