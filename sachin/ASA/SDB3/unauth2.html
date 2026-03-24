@@ -1,6 +1,3 @@
-
-
-
 <html>
 <head>
 	<title>SDB3-MIAW-ASA-Unauth</title>
@@ -18,6 +15,7 @@
 			// Embedded Messaging app ready
 			console.log("onEmbeddedMessagingReady event received");
 			//embeddedservice_bootstrap.settings.displayMode = "inline";
+			embeddedservice_bootstrap.settings.disableStreamingResponses = true;
 		});
 
 		window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
