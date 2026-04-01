@@ -22,8 +22,9 @@
 
 	<!-- Buttons -->
 	<div class="button-container">
-		<button onclick="init('Flash Planner')">Flash Planner</button>
-		<button onclick="init('Unified Planner')">Unified Planner</button>
+		<button onclick="init('Voice Planner', 'https://orgfarm-7677fab2ab.demo.test1.my.pc-rnd.salesforce-scrt.com')">Voice Planner</button>
+		<button onclick="init('Unified Planner', 'https://orgfarm-7677fab2ab.demo.test1.my.pc-rnd.salesforce-scrt.com')">Unified Planner</button>
+		<button onclick="init('SDB40 Unified Planner with Transcription', 'https://orgfarm-ae26564531.test2.my.pc-rnd.salesforce-scrt.com')">SDB40 Unified Planner with Transcription</button>
 	</div>
 
 	<p>
@@ -50,12 +51,20 @@
 	</script>
 
 	<script type="text/javascript">
-		function init(plannerType) {
+		function init(plannerType, scrt2Url) {
 			try {
-				let deploymentName =
-					plannerType === "Flash Planner" ? "CWCUnauth1" : "CWCUnauth2";
-
-				console.log("Initializing with:", plannerType, deploymentName);
+				let deploymentName = () => {
+					if (plannerType === "Voice Planner") {
+						return "CWCUnauth1";
+					} else if (plannerType === "Unified Planner") {
+						return "CWCUnauth2";
+					} else if (plannerType === "SDB40 Unified Planner with Transcription") {
+						return "CWCUnauth1";
+					}
+				};
+					// plannerType === "Flash Planner" ? "CWCUnauth1" : "CWCUnauth2";
+				
+				console.log("Initializing with:", plannerType, deploymentName, scrt2Url);
 
 				agentforce_messaging.settings.language = 'en';
 				agentforce_messaging.settings.devMode = true;
@@ -65,7 +74,7 @@
 					deploymentName,
 					'https://orgfarm-df6280a247.my.site-com.gqnakd70td1q0r2dnud7i5t9q11bs.wa.crm.dev:6101/ESWCWC11765849308644',
 					{
-						scrt2URL: 'https://orgfarm-7677fab2ab.demo.test1.my.pc-rnd.salesforce-scrt.com'
+						scrt2URL: scrt2Url
 					}
 				);
 			} catch (err) {
