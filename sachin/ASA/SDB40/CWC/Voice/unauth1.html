@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>SDB40-CWC-Voice-Unauth-1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+<body>
+	<h1> SDB40-CWC-Voice-Unauth-1 </h1>
+  <h2 style="color:blue;">Admin: epic.out.2969983a878c@orgfarm.salesforce.com</h2>
+	<p><a id="editThisPageLink" target="_blank" style="color:blue">Edit this page</a></p>
+	<script>document.getElementById('editThisPageLink').href = "https://github.com/sachinhreddy-sfdc/esw1234.github.io/edit/master/sachin/ASA/SDB3/CWC/cwc1.html"</script>
+
+	<script "text/javascript">
+		window.addEventListener("onEmbeddedMessagingReady", () => {
+			// Embedded Messaging app ready
+			console.log("onEmbeddedMessagingReady event received");
+		});
+	</script>
+
+	<script type='text/javascript'>
+		function initCWC() {
+			try {
+				embeddedservice_bootstrap.settings.language = 'en'; // For example, enter 'en' or 'en-US'
+				embeddedservice_bootstrap.settings.devMode = true;
+				//embeddedservice_bootstrap.settings.displayMode = 'inline';
+        
+				embeddedservice_bootstrap.init(
+				  '00DoB000001i4H3',
+				  'CWCUnauthVoice1',
+				  'https://orgfarm-737420caa0.test2.my.pc-rnd.site.com/ESWCWCUnauthVoice11775503895586',
+				  {
+					  scrt2URL: 'https://orgfarm-737420caa0.test2.my.pc-rnd.salesforce-scrt.com'
+				  }
+			  );
+			} catch (err) {
+				console.error('Error loading Embedded Messaging: ', err);
+			}
+		};
+	</script>
+	<script type='text/javascript' src='https://orgfarm-737420caa0.test2.my.pc-rnd.site.com/ESWCWCUnauthVoice11775503895586/assets/js/bootstrap.js' onload='initCWC()'></script>
+</body>
+</html>
