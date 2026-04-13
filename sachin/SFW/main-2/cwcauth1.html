@@ -13,7 +13,7 @@
 		window.addEventListener("onEmbeddedMessagingReady", () => {
 			// Embedded Messaging app ready
 			console.log("onEmbeddedMessagingReady event received");
-			fetchAndSetToken();
+			//fetchAndSetToken();
 		});
 
 		window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
@@ -88,14 +88,22 @@
 				agentforce_messaging.settings.restrictSessionOnMessagingChannel = true;
 				//agentforce_messaging.settings.displayMode = 'inline';
         
-				agentforce_messaging.init(
-				  '00DSB00000TcgK5',
-				  'CWC_Auth1',
-				  'https://orgfarm-df6280a247.my.site-com.gqnakd70td1q0r2dnud7i5t9q11bs.wa.crm.dev:6101/ESWCWC11765849308644',
-				  {
-					  scrt2URL: 'https://scrt01.unified-engagement.sfdc-ckzqgc.svc.sfdcfc.net'//'https://orgfarm-47f8da4be3.demo.test1.my.pc-rnd.salesforce-scrt.com'
-				  }
-			  );
+				// agentforce_messaging.init(
+				//   '00DSB00000TcgK5',
+				//   'CWC_Auth1',
+				//   'https://orgfarm-df6280a247.my.site-com.gqnakd70td1q0r2dnud7i5t9q11bs.wa.crm.dev:6101/ESWCWC11765849308644',
+				//   {
+				// 	  scrt2URL: 'https://scrt01.unified-engagement.sfdc-ckzqgc.svc.sfdcfc.net'//'https://orgfarm-47f8da4be3.demo.test1.my.pc-rnd.salesforce-scrt.com'
+				//   }
+			 //  );
+				embeddedservice_bootstrap.init(
+				'00DRZ0000047DcX',
+				'ECV2',
+				'https://orgfarm-df6280a247.my.site-com.gqnakd70td1q0r2dnud7i5t9q11bs.wa.crm.dev:6101/ESWCWC11765849308644',
+				{
+					scrt2URL: 'https://orgfarm-82cc287160.test2.my.pc-rnd.salesforce-scrt.com'
+				}
+				);
 			} catch (err) {
 				console.error('Error loading Embedded Messaging: ', err);
 			}
