@@ -22,7 +22,7 @@
 			window.addEventListener("onEmbeddedMessagingReady", () => {
 				// Embedded Messaging app ready
 				console.log("onEmbeddedMessagingReady event received");
-				fetchAndSetToken();
+				//fetchAndSetToken();
 			});
 	
 			window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
@@ -82,11 +82,11 @@
 				embeddedservice_bootstrap.settings.sseRetryEnhancement = true;
 
 				embeddedservice_bootstrap.init(
-					'00DSB00000TcgK5',
-				  	'Web_Auth1',
-					'https://orgfarm-df6280a247.my.site-com.gqnakd70td1q0r2dnud7i5t9q11bs.wa.crm.dev:6101/ESWMIAW11765333393833',
+					'00DSG00000lw4L7',
+					'MIAWChatPouncingTest1',
+					'https://orgfarm-7bc352bb48.my.site-com.jekff64396il0nt5xzbyt.wc.crm.dev:6101/ESWCWC11778627052817',
 					{
-						scrt2URL: 'https://orgfarm-47f8da4be3.demo.test1.my.pc-rnd.salesforce-scrt.com'
+						scrt2URL: 'https://orgfarm-4d7f1c7065.demo.test1.my.pc-rnd.salesforce-scrt.com'
 					}
 				);
 			} catch (err) {
@@ -94,6 +94,6 @@
 			}
 		};
 	</script>
-	<script type='text/javascript' src='https://orgfarm-df6280a247.my.site-com.gqnakd70td1q0r2dnud7i5t9q11bs.wa.crm.dev:6101/ESWMIAW11765333393833/assets/js/bootstrap.js' onload='initEmbeddedMessaging()'></script>
+	<script type='text/javascript' src='https://orgfarm-7bc352bb48.my.site-com.jekff64396il0nt5xzbyt.wc.crm.dev:6101/ESWCWC11778627052817/assets/js/bootstrap.js' onload='initEmbeddedMessaging()'></script>
 	</body>
 </html>
