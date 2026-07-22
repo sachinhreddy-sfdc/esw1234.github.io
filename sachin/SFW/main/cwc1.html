@@ -1,66 +1,530 @@
-
-
-
-
 <html>
-<head>
-	<title>SDB6-CWC-Unauth-1</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-</head>
-<body>
-	<h1> SDB6-CWC-Unauth-1 </h1>
-  	<h2 style="color:blue;">Admin: epic.e35efd8bb6cf@orgfarm.out</h2>
-	<p><a id="editThisPageLink" target="_blank" style="color:blue">Edit this page</a></p>
-	<script>document.getElementById('editThisPageLink').href = "https://github.com/sachinhreddy-sfdc/esw1234.github.io/edit/master/sachin/SFW/main/cwc1.html"</script>
+  <head>
+      <title>SDB6-CWC-Unauth-1</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  </head>
+  <body>
+      <h1> SDB6-CWC-Unauth-1 </h1>
+        <h2 style="color:blue;">Admin: epic.e35efd8bb6cf@orgfarm.out</h2>
+      <p><a id="editThisPageLink" target="_blank" style="color:blue">Edit this page</a></p>
+      <script>document.getElementById('editThisPageLink').href = "https://github.com/sachinhreddy-sfdc/esw1234.github.io/edit/master/sachin/SFW/main/cwc1.html"</script>
 
-	<style>
-		.embedded-messaging > .embeddedMessagingFrame[class~="inline"], .embedded-messaging > .embeddedMessagingFrame[class~="inline"][class~="maximized"] {
-			position: absolute
-		}
-	</style>
-	<script "text/javascript">
-		window.addEventListener("onEmbeddedMessagingReady", () => {
-			// Embedded Messaging app ready
-			console.log("onEmbeddedMessagingReady event received");
-		});
+      <style>
+          .embedded-messaging > .embeddedMessagingFrame[class~="inline"], .embedded-messaging > .embeddedMessagingFrame[class~="inline"][class~="maximized"] {
+              position: absolute
+          }
+      </style>
+  
+      <!-- ============================================================= -->
+      <!-- Context Variable Tester (setSessionContext playground)         -->
+      <!-- ============================================================= -->
+      <style>
+          :root {
+              --cvt-bg: #ffffff;
+              --cvt-border: #d8dde6;
+              --cvt-border-strong: #c9cdd6;
+              --cvt-ink: #16325c;
+              --cvt-muted: #54698d;
+              --cvt-accent: #0176d3;
+              --cvt-accent-dark: #014486;
+              --cvt-danger: #ba0517;
+              --cvt-ok: #2e844a;
+              --cvt-chip: #f3f6fb;
+              --cvt-shadow: 0 2px 8px rgba(22,50,92,.10);
+              --cvt-radius: 10px;
+              --cvt-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+              --cvt-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          }
+          .cvt-wrap {
+              font-family: var(--cvt-sans);
+              color: var(--cvt-ink);
+              max-width: 860px;
+              margin: 18px 0 40px;
+              border: 1px solid var(--cvt-border);
+              border-radius: var(--cvt-radius);
+              box-shadow: var(--cvt-shadow);
+              background: var(--cvt-bg);
+              overflow: hidden;
+          }
+          .cvt-header {
+              background: linear-gradient(90deg, #032d60 0%, #0176d3 100%);
+              color: #fff;
+              padding: 14px 18px;
+          }
+          .cvt-header h3 { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: .2px; }
+          .cvt-header p { margin: 4px 0 0; font-size: 12px; opacity: .85; }
+          .cvt-body { padding: 18px; }
 
-		window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
-			console.log("Received 'onEmbeddedMessagingInitSuccess' event");
-		});
+          .cvt-varlist { display: flex; flex-direction: column; gap: 14px; }
+          .cvt-var {
+              border: 1px solid var(--cvt-border);
+              border-radius: 8px;
+              padding: 14px;
+              background: #fbfcfe;
+              position: relative;
+          }
+          .cvt-var-head {
+              display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap;
+          }
+          .cvt-field { display: flex; flex-direction: column; gap: 4px; }
+          .cvt-field label { font-size: 11px; font-weight: 600; color: var(--cvt-muted); text-transform: uppercase; letter-spacing: .4px; }
+          .cvt-field.name { flex: 1 1 200px; }
+          .cvt-field.type { flex: 0 0 200px; }
+          .cvt-field.value { flex: 1 1 100%; }
 
-		window.addEventListener("onEmbeddedMessagingInitError", () => {
-			console.log("Received 'onEmbeddedMessagingInitError' event");
-		});
-	</script>
+          .cvt-wrap input[type=text],
+          .cvt-wrap input[type=number],
+          .cvt-wrap input[type=date],
+          .cvt-wrap input[type=datetime-local],
+          .cvt-wrap select,
+          .cvt-wrap textarea {
+              font-family: var(--cvt-sans);
+              font-size: 13px;
+              color: var(--cvt-ink);
+              border: 1px solid var(--cvt-border-strong);
+              border-radius: 6px;
+              padding: 8px 10px;
+              background: #fff;
+              box-sizing: border-box;
+              width: 100%;
+              transition: border-color .12s, box-shadow .12s;
+          }
+          .cvt-wrap input:focus, .cvt-wrap select:focus, .cvt-wrap textarea:focus {
+              outline: none;
+              border-color: var(--cvt-accent);
+              box-shadow: 0 0 0 2px rgba(1,118,211,.20);
+          }
+          .cvt-wrap textarea { font-family: var(--cvt-mono); resize: vertical; min-height: 84px; line-height: 1.45; }
+          .cvt-bool-row { display: flex; align-items: center; gap: 8px; height: 36px; }
+          .cvt-bool-row input { width: auto; }
+          .cvt-hint { font-size: 11px; color: var(--cvt-muted); margin-top: 4px; }
 
-	<script type='text/javascript'>
-		function initCWC() {
-			try {
-				embeddedservice_bootstrap.settings.language = 'en'; // For example, enter 'en' or 'en-US'
-				embeddedservice_bootstrap.settings.devMode = true;
-				//embeddedservice_bootstrap.settings.displayMode = 'inline';
+          .cvt-remove {
+              position: absolute; top: 10px; right: 10px;
+              border: none; background: transparent; color: var(--cvt-danger);
+              font-size: 18px; line-height: 1; cursor: pointer; padding: 2px 6px; border-radius: 4px;
+          }
+          .cvt-remove:hover { background: rgba(186,5,23,.08); }
+  
+          /* Nested rows for List / Object editors */
+          .cvt-nested { margin-top: 8px; border: 1px dashed var(--cvt-border-strong); border-radius: 6px; padding: 10px; background: #fff; }
+          .cvt-nested-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+          .cvt-nested-row:last-child { margin-bottom: 0; }
+          .cvt-mini-remove { flex: 0 0 auto; border: none; background: transparent; color: var(--cvt-danger); cursor: pointer; font-size: 16px; padding: 4px 6px; }
+          .cvt-mini-remove:hover { background: rgba(186,5,23,.08); border-radius: 4px; }
 
-				// embeddedservice_bootstrap.init(
-				// 	'00DSG00000lw4L7',
-				// 	'CWCUnauth1',
-				// 	'https://orgfarm-9c1629be19.my.site-com.4mqh8q7zbhyw1r99fmsfch7o8.wc.crm.dev:6101/ESWCWCUnauth11783368249716',
-				// 	{
-				// 		scrt2URL: 'https://orgfarm-4d7f1c7065.demo.test1.my.pc-rnd.salesforce-scrt.com'
-				// 	}
-				// );
-				embeddedservice_bootstrap.init(
-					'00DoB000003Wu70',
-					'CWCUnauth1',
-					'https://orgfarm-9c1629be19.my.site-com.4mqh8q7zbhyw1r99fmsfch7o8.wc.crm.dev:6101/ESWCWCUnauth11783368249716',
-					{
-						scrt2URL: 'https://orgfarm-030410f9e9.test2.my.pc-rnd.salesforce-scrt.com'
-					}
-				);
-			} catch (err) {
-				console.error('Error loading Embedded Messaging: ', err);
-			}
-		};
-	</script>
-	<script type='text/javascript' src='https://orgfarm-9c1629be19.my.site-com.4mqh8q7zbhyw1r99fmsfch7o8.wc.crm.dev:6101/ESWCWCUnauth11783368249716/assets/js/init.js' onload='initCWC()'></script>
-</body>
-</html>
+          .cvt-btn {
+              font-family: var(--cvt-sans);
+              font-size: 13px; font-weight: 600;
+              border-radius: 6px; padding: 8px 14px; cursor: pointer;
+              border: 1px solid transparent; transition: background .12s, border-color .12s;
+          }
+          .cvt-btn-primary { background: var(--cvt-accent); color: #fff; }
+          .cvt-btn-primary:hover { background: var(--cvt-accent-dark); }
+          .cvt-btn-secondary { background: #fff; color: var(--cvt-accent); border-color: var(--cvt-border-strong); }
+          .cvt-btn-secondary:hover { background: var(--cvt-chip); }
+          .cvt-btn-ghost { background: transparent; color: var(--cvt-muted); border-color: var(--cvt-border); }
+          .cvt-btn-ghost:hover { background: var(--cvt-chip); }
+          .cvt-btn-mini { font-size: 12px; padding: 4px 10px; }
+
+          .cvt-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 16px; }
+          .cvt-toolbar .spacer { flex: 1 1 auto; }
+          .cvt-check {
+              display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--cvt-ink);
+              background: var(--cvt-chip); border: 1px solid var(--cvt-border); border-radius: 6px; padding: 8px 12px;
+          }
+          .cvt-check input { width: auto; }
+
+          .cvt-preview { margin-top: 16px; }
+          .cvt-preview-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+          .cvt-preview-head h4 { margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: .4px; color: var(--cvt-muted); }
+          .cvt-preview pre {
+              font-family: var(--cvt-mono); font-size: 12px; line-height: 1.5;
+              background: #0b1b33; color: #d6e4f7; border-radius: 8px; padding: 14px 16px;
+              overflow: auto; margin: 0; max-height: 300px;
+          }
+          .cvt-status { margin-top: 12px; font-size: 13px; min-height: 18px; }
+          .cvt-status.ok { color: var(--cvt-ok); }
+          .cvt-status.err { color: var(--cvt-danger); }
+          .cvt-status.info { color: var(--cvt-muted); }
+      </style>
+
+      <div class="cvt-wrap" id="cvtRoot">
+          <div class="cvt-header">
+              <h3>🧪 Context Variable Tester</h3>
+              <p>Builds a typed context array and calls <code>embeddedservice_bootstrap.utilAPI.setSessionContext(...)</code>. Chat must be initialized (<code>onEmbeddedMessagingReady</code>) first.</p>
+          </div>
+          <div class="cvt-body">
+              <div class="cvt-varlist" id="cvtVarList"><!-- variable cards injected here --></div>
+
+              <div class="cvt-toolbar">
+                  <button class="cvt-btn cvt-btn-secondary" id="cvtAddVar">+ Add variable</button>
+                  <div class="spacer"></div>
+                  <label class="cvt-check" title="Sets options.shouldPassWithNewConversation. Direct-to-Agent only.">
+                      <input type="checkbox" id="cvtNewConv"> Set Context on New Conversation
+                  </label>
+                  <button class="cvt-btn cvt-btn-primary" id="cvtSet">Set Context</button>
+              </div>
+  
+              <div class="cvt-preview">
+                  <div class="cvt-preview-head">
+                      <h4>Payload preview</h4>
+                      <button class="cvt-btn cvt-btn-ghost cvt-btn-mini" id="cvtCopy">Copy</button>
+                  </div>
+                  <pre id="cvtPreview">[]</pre>
+              </div>
+  
+              <div class="cvt-status info" id="cvtStatus">Ready. Add a variable and click &ldquo;Set Context&rdquo;.</div>
+          </div>
+      </div>
+
+      <script type="text/javascript">
+      (function () {
+          "use strict";
+  
+          // Agent Builder type -> Protos ValueType mapping (source: W-23517422 doc §3.5.1.2,
+          // reconciled with the Messaging SDK wire format in Value.kt / SMIValueFactory).
+          // `field` is the JSON key the value is serialized under inside `value`.
+          // `editor` selects the input UI. List/Object get bespoke nested editors.
+          var TYPES = [
+              { label: "String",    valueType: "TextValue",       field: "textValue",     editor: "text" },
+              { label: "Boolean",   valueType: "BooleanValue",    field: "booleanValue",  editor: "boolean" },
+              { label: "Number",    valueType: "IntegerValue",    field: "integerValue",  editor: "integer" },
+              { label: "Currency",  valueType: "DoubleValue",     field: "doubleValue",   editor: "double" },
+              { label: "Date",      valueType: "DateValue",       field: "dateValue",     editor: "date" },
+              { label: "Timestamp", valueType: "DateTimeValue",   field: "dateTimeValue", editor: "datetime" },
+              { label: "List",      valueType: "ListValue",       field: "listValue",     editor: "list" },
+              { label: "Object",    valueType: "StructuredValue", field: "value",         editor: "object" }
+          ];
+          // Simple scalar types allowed as List elements (List holds bare typed value objects).
+          var LIST_ELEMENT_TYPES = TYPES.filter(function (t) {
+              return ["text", "boolean", "integer", "double", "date", "datetime"].indexOf(t.editor) !== -1;
+          });
+
+          function byValueType(vt) {
+              for (var i = 0; i < TYPES.length; i++) { if (TYPES[i].valueType === vt) return TYPES[i]; }
+              return TYPES[0];
+          }
+
+          // ---- state ----
+          var vars = []; // [{ id, name, valueType, scalar, boolVal, listItems, objectText }]
+          var seq = 0;
+
+          function newVar(valueType) {
+              return {
+                  id: ++seq,
+                  name: "",
+                  valueType: valueType || "TextValue",
+                  scalar: "",              // string/number/date/datetime raw input
+                  boolVal: false,          // boolean input
+                  listItems: [ { valueType: "TextValue", scalar: "", boolVal: false } ],
+                  objectText: '{\n  "currentPage": "/cases/case-detail"\n}'
+              };
+          }
+
+          // ---- coercion: raw input -> correctly-typed JS value for the given editor ----
+          function coerceScalar(editor, scalar, boolVal) {
+              switch (editor) {
+                  case "boolean":  return !!boolVal;
+                  case "integer":  return scalar === "" ? 0 : parseInt(scalar, 10);
+                  case "double":   return scalar === "" ? 0 : parseFloat(scalar);
+                  default:         return String(scalar); // text, date, datetime -> string
+              }
+          }
+
+          // Build the { valueType, <field>: value } object for a scalar (non-list, non-object) type.
+          function buildScalarValue(t, scalar, boolVal) {
+              var o = { valueType: t.valueType };
+              o[t.field] = coerceScalar(t.editor, scalar, boolVal);
+              return o;
+          }
+
+          // Build a single context variable's `value` object per its type.
+          function buildValue(v) {
+              var t = byValueType(v.valueType);
+              if (t.editor === "list") {
+                  var arr = v.listItems.map(function (item) {
+                      var it = byValueType(item.valueType);
+                      return buildScalarValue(it, item.scalar, item.boolVal);
+                  });
+                  return { valueType: "ListValue", listValue: arr };
+              }
+              if (t.editor === "object") {
+                  var parsed;
+                  try { parsed = JSON.parse(v.objectText || "{}"); }
+                  catch (e) { parsed = { __invalidJson: true }; }
+                  return { valueType: "StructuredValue", value: parsed };
+              }
+              return buildScalarValue(t, v.scalar, v.boolVal);
+          }
+
+          function buildPayloadArray() {
+              return vars.map(function (v) {
+                  return { name: v.name, value: buildValue(v) };
+              });
+          }
+
+          // ---- rendering ----
+          var listEl = document.getElementById("cvtVarList");
+          var previewEl = document.getElementById("cvtPreview");
+          var statusEl = document.getElementById("cvtStatus");
+
+          function typeOptions(selected, pool) {
+              return (pool || TYPES).map(function (t) {
+                  return '<option value="' + t.valueType + '"' + (t.valueType === selected ? " selected" : "") + '>' + t.label + " (" + t.valueType + ")</option>";
+              }).join("");
+          }
+
+          function scalarInput(editor, value, boolVal, cls) {
+              cls = cls || "cvt-scalar";
+              switch (editor) {
+                  case "boolean":
+                      return '<div class="cvt-bool-row"><input type="checkbox" class="' + cls + '"' + (boolVal ? " checked" : "") + '> <span>true / false</span></div>';
+                  case "integer":
+                      return '<input type="number" step="1" class="' + cls + '" value="' + escapeAttr(value) + '" placeholder="e.g. 7">';
+                  case "double":
+                      return '<input type="number" step="any" class="' + cls + '" value="' + escapeAttr(value) + '" placeholder="e.g. 1499.99">';
+                  case "date":
+                      return '<input type="date" class="' + cls + '" value="' + escapeAttr(value) + '">';
+                  case "datetime":
+                      return '<input type="datetime-local" class="' + cls + '" value="' + escapeAttr(value) + '">';
+                  default:
+                      return '<input type="text" class="' + cls + '" value="' + escapeAttr(value) + '" placeholder="value">';
+              }
+          }
+
+          function escapeAttr(s) { return String(s == null ? "" : s).replace(/"/g, "&quot;"); }
+          function escapeHtml(s) {
+              return String(s == null ? "" : s)
+                  .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+          }
+
+          function render() {
+              listEl.innerHTML = "";
+              vars.forEach(function (v) {
+                  var t = byValueType(v.valueType);
+                  var card = document.createElement("div");
+                  card.className = "cvt-var";
+                  card.setAttribute("data-id", v.id);
+
+                  var valueBlock;
+                  if (t.editor === "list") {
+                      valueBlock = renderListEditor(v);
+                  } else if (t.editor === "object") {
+                      valueBlock =
+                          '<div class="cvt-field value"><label>Value (JSON object)</label>' +
+                          '<textarea class="cvt-object">' + escapeHtml(v.objectText) + '</textarea>' +
+                          '<div class="cvt-hint">Free-form JSON. Sent as-is under <code>value</code> (StructuredValue is not per-key typed).</div></div>';
+                  } else {
+                      valueBlock =
+                          '<div class="cvt-field value"><label>Value</label>' + scalarInput(t.editor, v.scalar, v.boolVal, "cvt-scalar") + '</div>';
+                  }
+
+                  card.innerHTML =
+                      '<button class="cvt-remove" title="Remove variable">&times;</button>' +
+                      '<div class="cvt-var-head">' +
+                          '<div class="cvt-field name"><label>Name</label><input type="text" class="cvt-name" value="' + escapeAttr(v.name) + '" placeholder="e.g. AccountName"></div>' +
+                          '<div class="cvt-field type"><label>Type (Agent Builder)</label><select class="cvt-type">' + typeOptions(v.valueType) + '</select></div>' +
+                      '</div>' + valueBlock;
+
+                  listEl.appendChild(card);
+              });
+              updatePreview();
+              bindCardEvents();
+          }
+
+          function renderListEditor(v) {
+              var rows = v.listItems.map(function (item, idx) {
+                  var it = byValueType(item.valueType);
+                  return '<div class="cvt-nested-row" data-idx="' + idx + '">' +
+                      '<select class="cvt-list-type" style="flex:0 0 170px;">' + typeOptions(item.valueType, LIST_ELEMENT_TYPES) + '</select>' +
+                      '<div class="cvt-val" style="flex:1 1 auto;">' + scalarInput(it.editor, item.scalar, item.boolVal, "cvt-list-val") + '</div>' +
+                      '<button class="cvt-mini-remove cvt-list-remove" title="Remove item">&times;</button>' +
+                  '</div>';
+              }).join("");
+              return '<div class="cvt-field value"><label>List items</label>' +
+                  '<div class="cvt-nested cvt-list-nested">' + rows +
+                      '<button class="cvt-btn cvt-btn-ghost cvt-btn-mini cvt-list-add">+ Add item</button>' +
+                  '</div>' +
+                  '<div class="cvt-hint">Each item is a bare typed value object <code>{ valueType, &hellip; }</code> inside <code>listValue</code>.</div></div>';
+          }
+
+          // ---- event binding (re-bound each render; state lives in `vars`) ----
+          function findVar(id) { for (var i = 0; i < vars.length; i++) { if (vars[i].id === id) return vars[i]; } return null; }
+
+          function bindCardEvents() {
+              Array.prototype.forEach.call(listEl.querySelectorAll(".cvt-var"), function (card) {
+                  var id = parseInt(card.getAttribute("data-id"), 10);
+                  var v = findVar(id);
+                  if (!v) return;
+
+                  card.querySelector(".cvt-remove").onclick = function () {
+                      vars = vars.filter(function (x) { return x.id !== id; });
+                      render();
+                  };
+                  card.querySelector(".cvt-name").oninput = function (e) { v.name = e.target.value; updatePreview(); };
+                  card.querySelector(".cvt-type").onchange = function (e) { v.valueType = e.target.value; render(); };
+
+                  var t = byValueType(v.valueType);
+                  if (t.editor === "list") {
+                      bindListEvents(card, v);
+                  } else if (t.editor === "object") {
+                      card.querySelector(".cvt-object").oninput = function (e) { v.objectText = e.target.value; updatePreview(); };
+                  } else if (t.editor === "boolean") {
+                      card.querySelector(".cvt-scalar").onchange = function (e) { v.boolVal = e.target.checked; updatePreview(); };
+                  } else {
+                      card.querySelector(".cvt-scalar").oninput = function (e) { v.scalar = e.target.value; updatePreview(); };
+                  }
+              });
+          }
+  
+          function bindListEvents(card, v) {
+              card.querySelector(".cvt-list-add").onclick = function () {
+                  v.listItems.push({ valueType: "TextValue", scalar: "", boolVal: false });
+                  render();
+              };
+              Array.prototype.forEach.call(card.querySelectorAll(".cvt-nested-row"), function (row) {
+                  var idx = parseInt(row.getAttribute("data-idx"), 10);
+                  var item = v.listItems[idx];
+                  row.querySelector(".cvt-list-type").onchange = function (e) { item.valueType = e.target.value; render(); };
+                  row.querySelector(".cvt-list-remove").onclick = function () {
+                      v.listItems.splice(idx, 1);
+                      if (v.listItems.length === 0) v.listItems.push({ valueType: "TextValue", scalar: "", boolVal: false });
+                      render();
+                  };
+                  var it = byValueType(item.valueType);
+                  var valInput = row.querySelector(".cvt-list-val");
+                  if (it.editor === "boolean") {
+                      valInput.onchange = function (e) { item.boolVal = e.target.checked; updatePreview(); };
+                  } else {
+                      valInput.oninput = function (e) { item.scalar = e.target.value; updatePreview(); };
+                  }
+              });
+          }
+  
+          function updatePreview() {
+              try {
+                  previewEl.textContent = JSON.stringify(buildPayloadArray(), null, 2);
+              } catch (e) {
+                  previewEl.textContent = "/* preview error: " + e.message + " */";
+              }
+          }
+  
+          function setStatus(msg, kind) {
+              statusEl.textContent = msg;
+              statusEl.className = "cvt-status " + (kind || "info");
+          }
+  
+          // ---- toolbar wiring ----
+          document.getElementById("cvtAddVar").onclick = function () { vars.push(newVar()); render(); };
+
+          document.getElementById("cvtCopy").onclick = function () {
+              var text = previewEl.textContent;
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                  navigator.clipboard.writeText(text).then(function () { setStatus("Payload copied to clipboard.", "ok"); });
+              } else {
+                  setStatus("Clipboard unavailable — select the preview manually.", "info");
+              }
+          };
+
+          document.getElementById("cvtSet").onclick = function () {
+              var payload = buildPayloadArray();
+
+              // Client-side guard rails (mirror the broker's validateSessionContext).
+              if (!payload.length) { setStatus("Add at least one context variable first.", "err"); return; }
+              for (var i = 0; i < payload.length; i++) {
+                  if (!payload[i].name) { setStatus("Variable #" + (i + 1) + " is missing a name.", "err"); return; }
+                  var val = payload[i].value;
+                  if (val && val.valueType === "StructuredValue" && val.value && val.value.__invalidJson) {
+                      setStatus('Variable "' + payload[i].name + '" has invalid JSON in its Object value.', "err"); return;
+                  }
+              }
+  
+              var util = window.embeddedservice_bootstrap && window.embeddedservice_bootstrap.utilAPI;
+              if (!util || typeof util.setSessionContext !== "function") {
+                  setStatus("utilAPI.setSessionContext not available yet — is the chat initialized (onEmbeddedMessagingReady)?", "err");
+                  return;
+              }
+
+              var passWithNewConv = document.getElementById("cvtNewConv").checked;
+              setStatus("Calling setSessionContext…", "info");
+              console.log("[CVT] setSessionContext payload:", payload, "options:", { shouldPassWithNewConversation: passWithNewConv });
+
+              try {
+                  // Second arg is only sent when the checkbox is on, so the legacy
+                  // bare-array path is exercised when it's off.
+                  var result = passWithNewConv
+                      ? util.setSessionContext(payload, { shouldPassWithNewConversation: true })
+                      : util.setSessionContext(payload);
+
+                  if (result && typeof result.then === "function") {
+                      result.then(function () {
+                          setStatus("✓ setSessionContext resolved successfully" + (passWithNewConv ? " (with new conversation)." : "."), "ok");
+                      }).catch(function (err) {
+                          setStatus("✗ setSessionContext rejected: " + (err && err.message ? err.message : err), "err");
+                      });
+                  } else {
+                      setStatus("setSessionContext called (no promise returned).", "info");
+                  }
+              } catch (err) {
+                  setStatus("✗ setSessionContext threw: " + (err && err.message ? err.message : err), "err");
+              }
+          };
+  
+          // Seed with one example variable so the panel isn't empty.
+          var seed = newVar("TextValue");
+          seed.name = "AccountName";
+          seed.scalar = "Acme Corporation";
+          vars.push(seed);
+          render();
+      })();
+          window.addEventListener("onEmbeddedMessagingReady", () => {
+              // Embedded Messaging app ready
+              console.log("onEmbeddedMessagingReady event received");
+          });
+
+          window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
+              console.log("Received 'onEmbeddedMessagingInitSuccess' event");
+          });
+
+          window.addEventListener("onEmbeddedMessagingInitError", () => {
+              console.log("Received 'onEmbeddedMessagingInitError' event");
+          });
+
+          // Dropped/failed context-variable feedback (renamed host event, W-23517422).
+          window.addEventListener("onEmbeddedMessagingContextVariablesSetResult", (e) => {
+              console.log("Received 'onEmbeddedMessagingContextVariablesSetResult' event", e && e.detail);
+          });
+      </script>
+
+      <script type='text/javascript'>
+          function initCWC() {
+              try {
+                  embeddedservice_bootstrap.settings.language = 'en'; // For example, enter 'en' or 'en-US'
+                  embeddedservice_bootstrap.settings.devMode = true;
+                  //embeddedservice_bootstrap.settings.displayMode = 'inline';
+
+                  // embeddedservice_bootstrap.init(
+                  //     '00DSG00000lw4L7',
+                  //     'CWCUnauth1',
+                  //     'https://orgfarm-9c1629be19.my.site-com.4mqh8q7zbhyw1r99fmsfch7o8.wc.crm.dev:6101/ESWCWCUnauth11783368249716',
+                  //     {
+                  //         scrt2URL: 'https://orgfarm-4d7f1c7065.demo.test1.my.pc-rnd.salesforce-scrt.com'
+                  //     }
+                  // );
+                  embeddedservice_bootstrap.init(
+                      '00DoB000003Wu70',
+                      'CWCUnauth1',
+                      'https://orgfarm-9c1629be19.my.site-com.4mqh8q7zbhyw1r99fmsfch7o8.wc.crm.dev:6101/ESWCWCUnauth11783368249716',
+                      {
+                          scrt2URL: 'https://orgfarm-030410f9e9.test2.my.pc-rnd.salesforce-scrt.com'
+                      }
+                  );
+              } catch (err) {
+                  console.error('Error loading Embedded Messaging: ', err);
+              }
+          };
+      </script>
+      <script type='text/javascript' src='https://orgfarm-9c1629be19.my.site-com.4mqh8q7zbhyw1r99fmsfch7o8.wc.crm.dev:6101/ESWCWCUnauth11783368249716/assets/js/init.js' onload='initCWC()'></script>
+  </body>
+  </html>
