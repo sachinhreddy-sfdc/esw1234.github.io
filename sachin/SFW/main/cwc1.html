@@ -160,7 +160,7 @@
               <div class="cvt-toolbar">
                   <button class="cvt-btn cvt-btn-secondary" id="cvtAddVar">+ Add variable</button>
                   <div class="spacer"></div>
-                  <label class="cvt-check" title="Sets options.shouldPassWithNewConversation. Direct-to-Agent only.">
+                  <label class="cvt-check" title="Sets options.shouldPassSessionContextWithNewConversation. Direct-to-Agent only.">
                       <input type="checkbox" id="cvtNewConv"> Set Context on New Conversation
                   </label>
                   <button class="cvt-btn cvt-btn-primary" id="cvtSet">Set Context</button>
@@ -448,13 +448,13 @@
 
               var passWithNewConv = document.getElementById("cvtNewConv").checked;
               setStatus("Calling setSessionContext…", "info");
-              console.log("[CVT] setSessionContext payload:", payload, "options:", { shouldPassWithNewConversation: passWithNewConv });
+              console.log("[CVT] setSessionContext payload:", payload, "options:", { shouldPassSessionContextWithNewConversation: passWithNewConv });
 
               try {
                   // Second arg is only sent when the checkbox is on, so the legacy
                   // bare-array path is exercised when it's off.
                   var result = passWithNewConv
-                      ? util.setSessionContext(payload, { shouldPassWithNewConversation: true })
+                      ? util.setSessionContext(payload, { shouldPassSessionContextWithNewConversation: true })
                       : util.setSessionContext(payload);
 
                   if (result && typeof result.then === "function") {
