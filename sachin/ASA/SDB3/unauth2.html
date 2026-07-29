@@ -16,6 +16,7 @@
 			console.log("onEmbeddedMessagingReady event received");
 			//embeddedservice_bootstrap.settings.displayMode = "inline";
 			//embeddedservice_bootstrap.settings.disableStreamingResponses = true;
+			embeddedservice_bootstrap.settings.shouldMinimizeWindowOnNewTab = true;
 		});
 
 		window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
