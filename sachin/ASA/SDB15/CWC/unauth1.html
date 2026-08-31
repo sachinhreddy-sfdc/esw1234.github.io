@@ -23,6 +23,44 @@
 		window.addEventListener("onEmbeddedMessagingInitError", () => {
 			console.log("Received 'onEmbeddedMessagingInitError' event");
 		});
+
+		window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
+			// Participant Change event
+			console.log("onEmbeddedMessagingConversationParticipantChanged event received", event.detail);
+			let participantChangedEntryPayload;
+			let parsedPayload;
+			try {
+  				participantChangedEntryPayload = JSON.parse((event?.detail?.conversationEntry?.entryPayload ?? "").replaceAll("\\", ""));
+			} catch (error) {
+  				console.error("Failed to parse entryPayload:", error);
+  				participantChangedEntryPayload = null;
+			}
+ 			if (participantChangedEntryPayload?.entries?.[0]?.operation === 'add' && participantChangedEntryPayload?.entries?.[0]?.participant?.role === 'Chatbot') {
+  				// Chatbot participant has joined -> hide file attachment button
+				let chat_iframe = embeddedservice_bootstrap.utilAPI.getEmbeddedMessagingFrame();
+				if (chat_iframe) {
+					// Send a postMessage to the internal ECv2 chat iframe
+					chat_iframe.contentWindow.postMessage(
+                  		{
+                      		"eventName": "hideFileAttachmentButton" // your event name
+                  		},
+                  		'https://orgfarm-47f8da4be3.demo.test1.my.pc-rnd.site.com/ESWCWC21759421967669' // your site url from the ECv2's deployment code snippet from setup
+              		);
+				}
+			} else if (participantChangedEntryPayload?.entries?.[0]?.operation === 'add' && participantChangedEntryPayload?.entries?.[0]?.participant?.role === 'Agent') {
+  				// Human participant has joined -> show file attachment button
+				let chat_iframe = embeddedservice_bootstrap.utilAPI.getEmbeddedMessagingFrame();
+				if (chat_iframe) {
+					// Send a postMessage to the internal ECv2 chat iframe
+					chat_iframe.contentWindow.postMessage(
+                  		{
+                      		"eventName": "showFileAttachmentButton" // your event name
+                  		},
+                  		'https://orgfarm-47f8da4be3.demo.test1.my.pc-rnd.site.com/ESWCWC21759421967669' // your site url from the ECv2's deployment code snippet from setup
+              		);
+				}
+			}
+		});
 	</script>
 
 	<script type='text/javascript'>
@@ -32,14 +70,22 @@
 				embeddedservice_bootstrap.settings.devMode = true;
 				//embeddedservice_bootstrap.settings.displayMode = 'inline';
         
+				// embeddedservice_bootstrap.init(
+				//   '00DQZ00000CKzWf',
+				//   'ECV2_Unauth_1',
+				//   'https://orgfarm-edf7d8d16e.test2.my.pc-rnd.site.com/ESWECV2Unauth11785950826141',
+				//   {
+				// 	  scrt2URL: 'https://orgfarm-edf7d8d16e.test2.my.pc-rnd.salesforce-scrt.com'
+				//   }
+				// );
 				embeddedservice_bootstrap.init(
-				  '00DQZ00000CKzWf',
-				  'ECV2_Unauth_1',
+				  '00DSB00000TcgK5',
+				  'CWC2',
 				  'https://orgfarm-edf7d8d16e.test2.my.pc-rnd.site.com/ESWECV2Unauth11785950826141',
 				  {
-					  scrt2URL: 'https://orgfarm-edf7d8d16e.test2.my.pc-rnd.salesforce-scrt.com'
+					  scrt2URL: 'https://orgfarm-47f8da4be3.demo.test1.my.pc-rnd.salesforce-scrt.com'
 				  }
-			);
+				);
 			} catch (err) {
 				console.error('Error loading Embedded Messaging: ', err);
 			}
