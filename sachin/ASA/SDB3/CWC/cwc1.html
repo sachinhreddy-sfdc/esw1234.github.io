@@ -46,6 +46,18 @@
                   		'https://orgfarm-47f8da4be3.demo.test1.my.pc-rnd.site.com/ESWCWC21759421967669' // your site url from the ECv2's deployment code snippet from setup
               		);
 				}
+			} else if (participantChangedEntryPayload?.entries?.[0]?.operation === 'add' && participantChangedEntryPayload?.entries?.[0]?.participant?.role === 'Agent') {
+  				// Human participant has joined -> show file attachment button
+				let chat_iframe = embeddedservice_bootstrap.utilAPI.getEmbeddedMessagingFrame();
+				if (chat_iframe) {
+					// Send a postMessage to the internal ECv2 chat iframe
+					chat_iframe.contentWindow.postMessage(
+                  		{
+                      		"eventName": "showFileAttachmentButton" // your event name
+                  		},
+                  		'https://orgfarm-47f8da4be3.demo.test1.my.pc-rnd.site.com/ESWCWC21759421967669' // your site url from the ECv2's deployment code snippet from setup
+              		);
+				}
 			}
 		});
 	</script>
