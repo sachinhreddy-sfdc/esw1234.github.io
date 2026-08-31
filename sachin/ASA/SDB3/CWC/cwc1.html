@@ -34,7 +34,7 @@
   				console.error("Failed to parse entryPayload:", error);
   				participantChangedEntryPayload = null;
 			}
- 			if (participantChangedEntryPayload?.entries?.[0]?.operation && participantChangeEventData?.entries?.[0]?.participant?.role === 'Chatbot') {
+ 			if (participantChangedEntryPayload?.entries?.[0]?.operation === 'add' && participantChangedEntryPayload?.entries?.[0]?.participant?.role === 'Chatbot') {
   				// Chatbot participant has joined -> hide file attachment button
 				let chat_iframe = embeddedservice_bootstrap.utilAPI.getEmbeddedMessagingFrame();
 				if (chat_iframe) {
