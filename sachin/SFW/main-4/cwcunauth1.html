@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>SDO-CWC-Unauth-1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+	<style>
+		.button-container {
+			display: flex;
+			gap: 10px;
+			margin: 20px 0;
+		}
+		button {
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>SDBO-CWC-Unauth-1</h1>
+	<h2 style="color:blue;">Admin: sachinreddy@awe.com / test1234 </h2>
+	<p>
+		<a id="editThisPageLink" target="_blank" style="color:blue">Edit this page</a>
+	</p>
+
+	<script>
+		document.getElementById('editThisPageLink').href =
+			"https://github.com/sachinhreddy-sfdc/esw1234.github.io/new/master/sachin/SFW/main-4/cwcunauth1.html";
+	</script>
+
+	<script>
+		window.addEventListener("onEmbeddedMessagingReady", () => {
+			console.log("onEmbeddedMessagingReady event received");
+		});
+
+		window.addEventListener("onEmbeddedMessagingInitSuccess", () => {
+			console.log("Received 'onEmbeddedMessagingInitSuccess'");
+		});
+
+		window.addEventListener("onEmbeddedMessagingInitError", () => {
+			console.log("Received 'onEmbeddedMessagingInitError'");
+		});
+	</script>
+
+	<script type='text/javascript'>
+		function initCWC() {
+			try {
+				embeddedservice_bootstrap.settings.language = 'en'; // For example, enter 'en' or 'en-US'
+				embeddedservice_bootstrap.settings.devMode = true;
+				//embeddedservice_bootstrap.settings.displayMode = 'inline';
+        
+				embeddedservice_bootstrap.init(
+				  '00Dg800000DfF8T',
+				  'cwc_1',
+				  'https://orgfarm-c19a55e799.my.site-com.e0njdf6uijvx046ipdmbll91i1sc.wc.crm.dev:6101/ESWECv2Unauth11788545267296',
+				  {
+					  scrt2URL: 'https://trailsignup-9d3ad5784c6304.demo.my.salesforce-scrt.com'
+				  }
+			  );
+			} catch (err) {
+				console.error('Error loading Embedded Messaging: ', err);
+			}
+		};
+	</script>
+
+	<script
+		type="text/javascript"
+		src="https://orgfarm-c19a55e799.my.site-com.e0njdf6uijvx046ipdmbll91i1sc.wc.crm.dev:6101/ESWECv2Unauth11788545267296/assets/js/init.js"
+		onload='initCWC()'>
+	</script>
+</body>
+</html>
